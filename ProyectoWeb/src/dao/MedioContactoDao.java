@@ -5,6 +5,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class MedioContactoDao {
+import beans.MedioContacto;
+import beans.Tutor;
+
+public class MedioContactoDao extends BDconnection{
 	
 }
