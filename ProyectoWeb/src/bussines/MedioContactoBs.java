@@ -6,25 +6,25 @@ import beans.MedioContacto;
 public class MedioContactoBs {
 	public int registraContacto(MedioContacto medioContacto)
 	{
-		ContactoDao contactoDao = new ContactoDao();
+		MedioContactoDao contactoDao = new MedioContactoDao();
 		int codigo=(Integer)contactoDao.registrarContacto(medioContacto);
 		return codigo;
 	}
 public int actualizaPersona(MedioContacto medioContacto)
 {
-	ContactoDao contactoDao = new ContactoDao();
+	MedioContactoDao contactoDao = new MedioContactoDao();
 	int codigo=(Integer)contactoDao.actualizaPersona(medioContacto);
 	return codigo;
 }
 public int borrar(MedioContacto medioContacto)
 {
-	ContactoDao contactoDao = new ContactoDao();
+	MedioContactoDao contactoDao = new MedioContactoDao();
 	int codigo=(Integer)contactoDao.borrar(medioContacto);
 	return codigo;
 }
 	public Contacto findById(Integer id)
 	{
-		ContactoDao contactoDAO = new ContactoDao();
+		MedioContactoDao contactoDAO = new MedioContactoDao();
 		MedioContacto medioContacto;
 		medioContacto = contactoDAO.findbyId(id);
 		System.out.println("--->BS.medioContacto" + medioContacto);
@@ -33,7 +33,7 @@ public int borrar(MedioContacto medioContacto)
 	
 	public static void main(String[] args)
 	{
-		ContactoDao contactoDao = new ContactoDao();
+		MedioContactoDao contactoDao = new MedioContactoDao();
 		MedioContacto medioContacto;
 		medioContacto = contactoDao.findbyId(1);
 		if(medioContacto != null)
