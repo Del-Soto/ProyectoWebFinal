@@ -10,7 +10,7 @@ public class BDConnection {
 	public Connection getConnection() {
 	try {
         Class.forName("com.mysql.jdbc.Driver");
-        connection = DriverManager.getConnection("jdbc:mysql://localhost/PRUEBA", "PRUEBA", "PRUEBA");
+        connection = DriverManager.getConnection("jdbc:mysql://localhost/WEB", "root", "1234");
         System.err.println("-->Conexionexitosa");
      } catch (SQLException ex) {
     	 System.err.println("-->SQL errorConexionexitosa");
@@ -34,5 +34,4 @@ public class BDConnection {
 		}
 		
 	}
-	
 }

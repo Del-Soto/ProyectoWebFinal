@@ -8,6 +8,6 @@ import java.sql.SQLException;
 import beans.MedioContacto;
 import beans.Tutor;
 
-public class MedioContactoDao extends BDconnection{
+public class MedioContactoDao extends BDConnection{
 	
 }
