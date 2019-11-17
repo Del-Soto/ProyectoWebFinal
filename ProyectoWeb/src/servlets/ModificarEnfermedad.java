@@ -10,14 +10,15 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class ModificarEnfermedad
  */
-@WebServlet("/ModificarEnfermedad")
+@WebServlet("/")
 public class ModificarEnfermedad extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+       
     /**
-     * Default constructor. 
+     * @see HttpServlet#HttpServlet()
      */
     public ModificarEnfermedad() {
+        super();
         // TODO Auto-generated constructor stub
     }
 
@@ -26,7 +27,47 @@ public class ModificarEnfermedad extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		PrintWriter out = response.getWriter();
+		RequestDispatcher rd;
+		HttpSession misesion = request.getSession();
+		
+		int codigo = 0;
+		
+		response.setContentType("text/html");
+		response.setContentType("UTF-8");
+		
+		String telefono = (String) request.getParameter("mediocontacto.telefono2");
+		String correo = (String) request.getParameter("mediocontacto.correo2");
+		String id=(String)request.getParameter("id");
+		
+		if(telefono.isEmpty() || correo.isEmpty()||id.isEmpty())
+		{
+			rd = request.getRequestDispatcher("mediodecontacto.jsp");
+			codigo = -1;
+			misesion.setAttribute("codigo", codigo);
+			rd.forward(request, response);
+			System.err.println("--->codigo++++" + codigo);
+		}
+		else
+		{
+			Enfermedad contacto = new Enfermedad();
+			contacto.setTelefono(telefono);
+			contacto.setCorreo(correo);
+			contacto.setId(Integer.parseInt(id));
+		
+		EnfermedadBs contactobs = new EnfermedadBs();
+		int resultado = contactobs.actualizaPersona(contacto);
+		System.out.println("--->resultado" + resultado);
+		
+		if(resultado == 1)
+		{
+			System.out.println("--->Dentro del if" + resultado);
+			rd = request.getRequestDispatcher("exito.jsp");
+			codigo = 1;
+			misesion.setAttribute("codigo", codigo);
+			rd.forward(request, response);
+		}
+	}
 	}
 
 	/**
