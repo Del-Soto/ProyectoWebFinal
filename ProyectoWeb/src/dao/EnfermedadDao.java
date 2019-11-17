@@ -17,7 +17,7 @@ public class EnfermedadDao extends BDConnection{
 	import Bean.Contacto;
 	import Bean.Tutor;
 
-	public class ContactoDao extends BDconnection{
+	public class EnfermedadDao extends BDConnection{
 
 		public int registrarContacto(Enfermedad medioContacto)
 		{
