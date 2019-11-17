@@ -17,7 +17,7 @@ import bussines.MedioContactoBs;
 public class ConsultarMedioContacto {
 
 	@WebServlet("/ContactoControl")
-	public class ContactoControl extends HttpServlet {
+	public class ConsultarMedioContacto extends HttpServlet {
 		private static final long serialVersionUID = 1L;
 	       
 	    public ContactoControl() {

@@ -1,31 +1,31 @@
 package bussines;
 
-import dao.MedioContactoDao;
-import beans.MedioContacto;
+import dao.EnfermedadDao;
+import beans.Enfermedad;
 
-public class MedioContactoBs {
-	public int registraContacto(MedioContacto medioContacto)
+public class EnfermedadBs {
+	public int registraContacto(Enfermedad medioContacto)
 	{
-		MedioContactoDao contactoDao = new MedioContactoDao();
-		int codigo=(Integer)contactoDao.registrarContacto(MedioContacto);
+		EnfermedadDao contactoDao = new EnfermedadDao();
+		int codigo=(Integer)contactoDao.registrarContacto(Enfermedad);
 		return codigo;
 	}
-public int actualizaPersona(MedioContacto medioContacto)
+public int actualizaPersona(Enfermedad medioContacto)
 {
-	MedioContactoDao contactoDao = new MedioContactoDao();
+	EnfermedadDao contactoDao = new EnfermedadDao();
 	int codigo=(Integer)contactoDao.actualizaPersona(medioContacto);
 	return codigo;
 }
-public int borrar(MedioContacto medioContacto)
+public int borrar(Enfermedad medioContacto)
 {
-	MedioContactoDao contactoDao = new MedioContactoDao();
+	EnfermedadDao contactoDao = new EnfermedadDao();
 	int codigo=(Integer)contactoDao.borrar(medioContacto);
 	return codigo;
 }
 	public Contacto findById(Integer id)
 	{
-		MedioContactoDao contactoDAO = new MedioContactoDao();
-		MedioContacto medioContacto;
+		EnfermedadDao contactoDAO = new EnfermedadDao();
+		Enfermedad medioContacto;
 		medioContacto = contactoDAO.findbyId(id);
 		System.out.println("--->BS.medioContacto" + medioContacto);
 		return medioContacto;
@@ -33,8 +33,8 @@ public int borrar(MedioContacto medioContacto)
 	
 	public static void main(String[] args)
 	{
-		MedioContactoDao contactoDao = new MedioContactoDao();
-		MedioContacto medioContacto;
+		EnfermedadDao contactoDao = new EnfermedadDao();
+		Enfermedad medioContacto;
 		medioContacto = contactoDao.findbyId(1);
 		if(medioContacto != null)
 		{
